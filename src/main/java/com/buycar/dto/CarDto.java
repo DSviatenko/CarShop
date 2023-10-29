@@ -17,7 +17,6 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class CarDto {
     @Min(1)
-    @Positive
     private Long ownerId;
 
     @NotBlank
@@ -26,7 +25,7 @@ public class CarDto {
     @NotBlank
     private String model;
 
-    @PositiveOrZero
+    @Min(0)
     private Integer engineCapacity;
 
     @Enumerated(EnumType.STRING)
